@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn -B -q clean package -DskipTests
 
 # ---------- Etapa 2: imagen final, sin Maven, usuario no root ----------
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:25-jre-jammy
 RUN groupadd --system app && useradd --system --gid app --create-home app
 WORKDIR /app
 COPY --from=build /build/target/*-jar-with-dependencies.jar /app/crea3.jar
