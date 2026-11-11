@@ -1,6 +1,19 @@
-# CREA 3 — Plataforma Educativa Simplificada
 
-**Asignatura:** Programación Avanzada — UTU · **Grupo 2**
+<div align="center">
+  <img src="logo.png" alt="Logo Crea 3" width="140" />
+  
+  <p><strong>Examen Final de Programación Avanzada — 2.° Año Bachillerato Tecnológico en Informática (UTU)</strong><br>
+  <strong>Docente:</strong> Matías Alfaro</p>
+  <p><strong>Integrantes:</strong> Leandro Alonso, Leandro Marta y Valnetina Ferix</p>
+  <p>
+    <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk" alt="Java 21" />
+    <img src="https://img.shields.io/badge/Base_de_Datos-MySQL_8.0-blue?logo=mysql" alt="MySQL 8.0" />
+    <img src="https://img.shields.io/badge/Servidor_Web-Javalin_6-red" alt="Javalin 6" />
+    <img src="https://img.shields.io/badge/Despliegue-Render_HTTPS-brightgreen?logo=render" alt="Render" />
+    <img src="https://img.shields.io/badge/Contenedor-Docker-2496ED?logo=docker" alt="Docker" />
+  </p>
+</div>
+
 
 Aplicación **web** (Java 17, Javalin 6 con Jetty embebido) para gestionar calificaciones, asistencias y tareas, con dos roles:
 **Docente** (alta, modificación, baja y consulta) y **Estudiante** (consulta de sus propios datos).
