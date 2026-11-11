@@ -6,7 +6,7 @@
   <strong>Docente:</strong> Matías Alfaro</p>
   <p><strong>Integrantes:</strong> Leandro Alonso, Leandro Marta y Valnetina Ferix</p>
   <p>
-    <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk" alt="Java 21" />
+    <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk" alt="Java 17" />
     <img src="https://img.shields.io/badge/Base_de_Datos-MySQL_8.0-blue?logo=mysql" alt="MySQL 8.0" />
     <img src="https://img.shields.io/badge/Servidor_Web-Javalin_6-red" alt="Javalin 6" />
     <img src="https://img.shields.io/badge/Despliegue-Render_HTTPS-brightgreen?logo=render" alt="Render" />
