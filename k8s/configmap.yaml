@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crea3-config
+data:
+  DB_HOST: "crea3-db"        # nombre del Service de la base dentro del clúster
+  DB_PORT: "3306"
+  DB_NAME: "crea3_db"
+  DB_SSL_MODE: "PREFERRED"
+  PORT: "8080"

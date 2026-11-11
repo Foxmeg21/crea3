@@ -1,0 +1,8 @@
+#!/bin/sh
+# Ejecuta CREA 3 leyendo las variables de .env (si existe).
+if [ -f .env ]; then
+  set -a
+  . ./.env
+  set +a
+fi
+exec java -jar target/*-jar-with-dependencies.jar "$@"

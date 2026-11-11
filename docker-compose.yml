@@ -1,0 +1,42 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: crea3-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+    volumes:
+      - crea3-datos:/var/lib/mysql
+      # Los .sql de esta carpeta se ejecutan en orden la primera vez que se crea el volumen
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - "3306:3306"
+
+  app:
+    build: .
+    image: ghcr.io/${GITHUB_USER:-usuario}/crea3:latest
+    container_name: crea3-app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db            # dentro de la red de compose la base se llama "db"
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_SSL_MODE: ${DB_SSL_MODE:-PREFERRED}
+      PORT: 8080
+    ports:
+      - "8080:8080"   # http://localhost:8080
+
+volumes:
+  crea3-datos:

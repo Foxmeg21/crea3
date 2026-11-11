@@ -1,0 +1,12 @@
+# Credenciales: nunca se suben
+.env
+k8s/secret.yaml
+
+# Compilación
+target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+nbproject/
