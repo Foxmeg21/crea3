@@ -22,7 +22,7 @@ jobs:
       - name: Nombre de la imagen en minúsculas
         run: echo "IMAGEN=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/crea3:latest" >> "$GITHUB_ENV"
       - name: Construir y publicar
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
