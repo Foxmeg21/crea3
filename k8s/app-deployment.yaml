@@ -15,7 +15,7 @@ spec:
       containers:
         - name: crea3
           # Reemplazar "usuario" por su usuario de GitHub (en minúsculas)
-          image: ghcr.io/usuario/crea3:latest
+          image: ghcr.io/foxmeg21/crea3:latest
           ports:
             - containerPort: 8080
           envFrom:

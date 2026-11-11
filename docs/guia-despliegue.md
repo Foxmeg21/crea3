@@ -50,7 +50,7 @@ Si el servicio de Aiven está detenido por inactividad, se reactiva desde la con
 
 ### Despliegue en Render (HTTPS)
 1. Subir el repositorio a GitHub y, en Render, crear un **New → Web Service** (plan *Free*, sin tarjeta) desde ese repositorio.
-2. *Runtime*: **Docker** (usa el `Dockerfile` de la raíz). Render define `PORT` solo.
+2. *Runtime*: **Docker** (usa el `Dockerfile` de la raíz). Render define `PORT` solo. También se puede usar el `render.yaml` del repositorio (**New → Blueprint**).
 3. En *Environment* cargar `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS` (los de Aiven) y `DB_SSL_MODE=REQUIRED`.
 4. *Health Check Path*: `/health`.
 5. Al terminar el despliegue, abrir la URL `https://<nombre>.onrender.com` (candado visible) e iniciar sesión.
@@ -58,6 +58,14 @@ Si el servicio de Aiven está detenido por inactividad, se reactiva desde la con
 El plan gratuito apaga el servicio tras 15 minutos sin uso: abrir la URL antes de la defensa.
 
 📸 La app por HTTPS en Render, con el candado visible.
+
+### Despliegue en Railway (alternativa a Render, también con HTTPS)
+1. En Railway: **New Project → Deploy from GitHub repo** y elegir el repositorio. Railway detecta el `Dockerfile` (y usa `railway.json`).
+2. En *Variables* cargar `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS` (los de Aiven) y `DB_SSL_MODE=REQUIRED`. Railway define `PORT` solo.
+3. En *Settings → Networking* pulsar **Generate Domain**: queda `https://<nombre>.up.railway.app` (candado visible).
+4. Verificar `https://<nombre>.up.railway.app/health` (debe responder `OK`) e iniciar sesión.
+
+📸 La app por HTTPS en Railway, con el candado visible (si se usa en lugar de Render).
 
 ## 3. Nivel 3 — Kubernetes (minikube)
 ```bash

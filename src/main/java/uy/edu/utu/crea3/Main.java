@@ -2,11 +2,9 @@ package uy.edu.utu.crea3;
 
 import uy.edu.utu.crea3.web.WebServer;
 
-import java.io.IOException;
-
-/** Punto de entrada: levanta el servidor web (puerto 8080 o la variable PORT). */
+/** Punto de entrada: levanta el servidor web Javalin (puerto 8080 o la variable PORT). */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         WebServer.iniciar();
     }
 }

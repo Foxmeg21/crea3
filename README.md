@@ -2,11 +2,11 @@
 
 **Asignatura:** Programación Avanzada — UTU · **Grupo 2**
 
-Aplicación **web** (Java 17, servidor HTTP embebido) para gestionar calificaciones, asistencias y tareas, con dos roles:
+Aplicación **web** (Java 17, Javalin 6 con Jetty embebido) para gestionar calificaciones, asistencias y tareas, con dos roles:
 **Docente** (alta, modificación, baja y consulta) y **Estudiante** (consulta de sus propios datos).
 
 ## Tecnologías
-Java 17 · Maven · servidor HTTP del JDK (`com.sun.net.httpserver`) · HTML · MySQL 8 / MariaDB · BCrypt (jBCrypt) · Docker · Kubernetes (minikube) · Aiven (base en la nube)
+Java 17 · Maven · Javalin 6 · HTML · MySQL 8 / MariaDB · BCrypt (jBCrypt) · Docker · Kubernetes (minikube) · Aiven (base en la nube) · Render / Railway (hosting con HTTPS)
 
 ## Estructura del repositorio
 ```

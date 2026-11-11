@@ -3,7 +3,7 @@
 ## Capas de la aplicación
 ```mermaid
 flowchart LR
-  WEB["web (HTTP + HTML)"] --> SI["service (interfaces)"]
+  WEB["web (Javalin 6 + HTML)"] --> SI["service (interfaces)"]
   SI --> SS["service (implementaciones)"]
   SS --> DI["dao (interfaces)"]
   DI --> DS["dao (JDBC)"]
@@ -15,7 +15,7 @@ flowchart LR
 ## Despliegue
 ```mermaid
 flowchart LR
-  U[Usuario<br/>navegador] -->|HTTPS| APP["App web CREA 3<br/>contenedor en Render"]
+  U[Usuario<br/>navegador] -->|HTTPS| APP["App web CREA 3<br/>contenedor en Render / Railway"]
   GH[Repositorio GitHub] -->|Actions| GHCR[Imagen en ghcr.io]
   GHCR --> K8S["Kubernetes local (minikube)<br/>app web + MySQL"]
   APP -->|JDBC + SSL| AIVEN[(Base en Aiven)]
