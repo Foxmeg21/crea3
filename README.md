@@ -34,6 +34,7 @@ src/main/java/uy/edu/utu/crea3/
 sql/          01-crear-tablas.sql, 02-datos-prueba.sql
 k8s/          manifiestos de Kubernetes
 docs/         guía de despliegue, informe de seguridad, diagramas
+capturas/     capturas de partes vitales del proyecto
 ```
 
 ## Configuración
